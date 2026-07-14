@@ -30,7 +30,7 @@ void main() {
         double gpa = double.parse(stdin.readLineSync()!);
         
         manager.addStudent( name,id, level, gpa);
-        print("Student added successfully!");
+        
 
         break;
 

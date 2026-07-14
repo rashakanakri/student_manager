@@ -5,8 +5,20 @@ class StudentManager {
   final IStudentRepository _repository;
   StudentManager(this._repository);
 
-  void addStudent(String name,String id,  int level, double gpa) {
+  bool addStudent(String name,String id,  int level, double gpa) {
+
+  if (name.isEmpty) {
+  print("Name cannot be empty");
+  return false;}
+  
+  
+  if (gpa < 0 || gpa > 4.0){
+  print("GPA must be between 0 and 4");
+  return false;}
+  
     _repository.save(Student(name: name, id: id, level: level, gpa: gpa));
+    print("Student added successfully!");
+    return true;
   }
 
   void showAll() {
