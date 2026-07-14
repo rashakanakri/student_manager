@@ -5,7 +5,7 @@ import '../lib/student_repository.dart';
 
 void main() {
   final repository = StudentRepository(); 
-  final manager = StudentManager(repository); 
+  final manager = StudentManager(repository,repository); 
   print("Welcome to the Student Management System!");
  
   while (true) {

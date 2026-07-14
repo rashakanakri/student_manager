@@ -2,9 +2,11 @@ import 'i_student_repository.dart';
 import 'student.dart';
 
 class StudentManager {
-  final IStudentRepository _repository;
-  StudentManager(this._repository);
-
+  final IStudentReader _reader;
+  final IStudentWriter _writer;
+  // final IStudentRepository _repository;
+  // StudentManager(this._repository);
+  StudentManager(this._reader, this._writer);
   bool addStudent(String name,String id,  int level, double gpa) {
 
   if (name.isEmpty) {
@@ -16,24 +18,24 @@ class StudentManager {
   print("GPA must be between 0 and 4");
   return false;}
   
-    _repository.save(Student(name: name, id: id, level: level, gpa: gpa));
+    _writer.save(Student(name: name, id: id, level: level, gpa: gpa));
     print("Student added successfully!");
     return true;
   }
 
   void showAll() {
-    final list = _repository.fetchAll();
+    final list = _reader.fetchAll();
     if (list.isEmpty) print("The list is empty");
     else list.forEach(print);
   }
 
   void deleteStudent(String id) {
-  _repository.delete(id);
+  _writer.delete(id);
 }
 
 
 void updateStudentGpa(String id, double newGpa) {
-  _repository.updateGpa(id, newGpa);
+  _writer.updateGpa(id, newGpa);
 }
 
 

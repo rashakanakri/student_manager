@@ -1,7 +1,7 @@
 import 'student.dart';
 import 'i_student_repository.dart';
 
-class StudentRepository implements IStudentRepository {
+class StudentRepository implements IStudentReader, IStudentWriter {
   final List<Student> _students = [];
 
   @override
