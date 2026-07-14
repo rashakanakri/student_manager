@@ -5,7 +5,7 @@ import '../lib/student_repository.dart';
 
 void main() {
   final repository = StudentRepository(); 
-  final manager = StudentManager(repository); 
+  final manager = StudentManager(repository,repository); 
   print("Welcome to the Student Management System!");
  
   while (true) {
@@ -30,7 +30,7 @@ void main() {
         double gpa = double.parse(stdin.readLineSync()!);
         
         manager.addStudent( name,id, level, gpa);
-        print("Student added successfully!");
+        
 
         break;
 
