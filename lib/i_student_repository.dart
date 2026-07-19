@@ -6,6 +6,7 @@ abstract class IStudentWriter {
 
   void updateGpa(String id, double newGpa);
 }
+
 abstract class IStudentReader {
   List<Student> fetchAll();
 }

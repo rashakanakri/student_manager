@@ -4,7 +4,7 @@ class Student {
   final String id;
   String name;
   int level;
-double gpa;
+  double gpa;
 
   Student({
     required this.id, 

@@ -29,12 +29,20 @@ void main() {
         print("Enter GPA: ");
         double gpa = double.parse(stdin.readLineSync()!);
         
-        manager.addStudent( name,id, level, gpa);
+        final error = manager.addStudent(name, id, level, gpa);
+
+         if (error == null) {
+          print("Student added successfully!");
+
+        }else {
+
+          print(error);
+         }
+
+          break;
         
 
-        break;
-
-      case '2':
+     case '2':
         manager.showAll();
         break;
       case '3':
@@ -45,7 +53,7 @@ void main() {
       break;
       case '4':
         print("Enter student ID:");
-String id = stdin.readLineSync()!;
+        String id = stdin.readLineSync()!;
 
 print("Enter new GPA:");
 double gpa = double.parse(stdin.readLineSync()!);
